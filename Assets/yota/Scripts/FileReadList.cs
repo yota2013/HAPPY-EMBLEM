@@ -27,6 +27,7 @@ public class FileReadList{
 		Debug.Log (fi);
 		string[] linesFromfile = fi.text.Split('\n');
 
+
 		foreach (string textfile in linesFromfile)
 		{
 			Debug.Log(textfile);
