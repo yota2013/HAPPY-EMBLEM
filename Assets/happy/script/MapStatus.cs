@@ -5,7 +5,7 @@ public class MapStatus : MonoBehaviour {
 
 	private int movingCost;
 
-	public string Cost {
+	public int Cost {
 		get { return movingCost; }
 		set { movingCost= value; }
 	}

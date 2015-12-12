@@ -4,7 +4,7 @@ using System.Collections;
 public class MapList : MonoBehaviour {
 
 	// マップの種類を定義しておく
-	private enum MapType{
+	public enum MapType{
 		PLAIN, 
 		MOUNTAIN, 
 		WATER, 
