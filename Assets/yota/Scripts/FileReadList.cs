@@ -23,7 +23,7 @@ public class FileReadList{
 	public void ReadFile(string Filename){
 		// FileReadTest.txtファイルを読み込む
 		//ResourcesからのLoad
-		TextAsset fi = Resources.Load("Scnario/" + Filename) as TextAsset;
+		TextAsset fi = Resources.Load("CSV/" + Filename) as TextAsset;
 		Debug.Log (fi);
 		string[] linesFromfile = fi.text.Split('\n');
 
