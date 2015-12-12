@@ -2,9 +2,7 @@
 using System.Collections;
 
 public class IsClicker : MonoBehaviour {
-
 	// Use this for initializatio
-	
 	// Update is called once per frame
 	void Update () {
 		if (Input.anyKeyDown) {
