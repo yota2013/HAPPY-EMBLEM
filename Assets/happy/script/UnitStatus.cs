@@ -6,12 +6,16 @@ public class UnitStatus : MonoBehaviour {
 	//
 	// ユニットのパラメータ
 	//
-
+	[SerializeField]
 	private string UnitName;		// 名前
+	[SerializeField]
 	private string UnitType;		// ユニットの役職
+	[SerializeField]
 	private int attackPoint;        // 攻撃力
+	[SerializeField]
 	private int defensePoint;       // 防御力
 	//private int movingDistance;     // 移動距離(要変更)
+	[SerializeField]
 	private int hitPoint;           // 体力
 
 
