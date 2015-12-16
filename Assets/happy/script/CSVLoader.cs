@@ -2,16 +2,19 @@
 using System.Collections;
 using System.IO;
 
-public class CSVLoader : MonoBehaviour{
+public class CSVLoader {
 
+	/*
 	void Start() {
 		Debug.Log ("start");
 		CSVLoad ("TestUnitData");
 	}
+	*/
 
 	public void CSVLoad(string filename){
 		TextAsset csv = Resources.Load("CSV/" + filename) as TextAsset;
 		StringReader reader = new StringReader(csv.text);
+
 		while (reader.Peek() > -1) {
 			string line = reader.ReadLine();
 			string[] values = line.Split(',');
@@ -19,18 +22,13 @@ public class CSVLoader : MonoBehaviour{
 			if(values[0] == "UnitName"){
 				continue;
 			}else{
-				UnitStatusSetter (values);
+				//UnitStatusSetter (values);
+				Generate(values);
 			}
 		}
 	}
 
-	public void UnitStatusSetter(string[] values) {
-		UnitStatus unitStatus = this.gameObject.GetComponent<UnitStatus> ();
-
-		unitStatus.Name = values [0];
-		unitStatus.Type = values [1];
-		unitStatus.AP 	= int.Parse(values [2]);
-		unitStatus.HP 	= int.Parse(values [3]);
-		unitStatus.DP 	= int.Parse(values [4]);
+	// 生成処理
+	public abstract void Generate(string []values){
 	}
 }
