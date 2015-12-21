@@ -5,11 +5,9 @@ using System.IO;
 
 public class LoadUnitCSV : CSV {
 	// ユニットのデータ格納用リスト
-	private List<string[]> unitDataList;
+	private List<string[]> unitDataList = new List<string[]>();
 
 	public override void CSVRead (string readFileName){
-		unitDataList = new List<string[]> ();
-
 		TextAsset csv = Resources.Load("CSV/" + readFileName) as TextAsset;
 		StringReader reader = new StringReader(csv.text);
 

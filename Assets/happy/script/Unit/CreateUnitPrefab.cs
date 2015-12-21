@@ -10,10 +10,15 @@ public class CreateUnitPrefab : MonoBehaviour {
 	private SetUnitStatus setUnitStatus;
 	private LoadUnitCSV loadUnitCSV;
 
+	// インスタンス生成
+	void Awake() {
+		loadUnitCSV = new LoadUnitCSV();
+	}
+
 	// Use this for initialization
 	void Start() {
 		setUnitStatus = this.gameObject.GetComponent<SetUnitStatus> ();
-		loadUnitCSV = new LoadUnitCSV();
+
 		loadUnitCSV.CSVRead ("TestUnitData");
 		CreatePrefab (loadUnitCSV.UnitList);
 	}
@@ -35,5 +40,6 @@ public class CreateUnitPrefab : MonoBehaviour {
 				setUnitStatus.UnitStatusSet(unitDataList[i], createdUnit);
 			}
 		}
+		Destroy (this.gameObject);
 	}
 }
